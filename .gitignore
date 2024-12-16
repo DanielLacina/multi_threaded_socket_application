@@ -1,0 +1,11 @@
+# Ignore all executables generated (no extension)
+# For systems which generate executables without an extension (eg. linux)
+*
+!*.*
+
+# Windows
+*.exe
+
+# Currently all individual executables in the project have only one single source file, and thus there aren't any object files.
+# However for the sake of future proofing, it'll ignore those too.
+*.o
