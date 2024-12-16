@@ -2,6 +2,7 @@
 # For systems which generate executables without an extension (eg. linux)
 *
 !*.*
+!*/
 
 # Windows
 *.exe
