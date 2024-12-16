@@ -15,7 +15,7 @@ void* read_client_messages(void* args) {
   char buffer[1024] = {0};
   struct thread_args *my_args = (struct thread_args*) args; 
   int client_socket = my_args -> client_socket; 
-  while (1) {
+  for (;;) {
     if (read(client_socket, buffer, 1024 - 1) < 0) {
       printf("Failed to read. Error: %s\n", strerror(errno));
     }

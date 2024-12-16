@@ -83,7 +83,7 @@ void send_messages(char *buffer) {
 void* handle_server_socket(void* args) {
     ssize_t valread;
     char buffer[1024] = {0};
-    while (1) { 
+    for (;;) { 
        struct thread_args* my_args = (struct thread_args*) args;
        int server_socket = my_args -> server_socket; 
        valread = read(server_socket, buffer, 1024 - 1); 
@@ -131,7 +131,7 @@ int main(int argc, char const* argv[]) {
       exit(EXIT_FAILURE);
    }
    
-   while (1) {
+   for (;;) {
       int server_socket;
       if ((server_socket = accept(server_fd, (struct sockaddr*)&address, &addrlen)) > 0) {
          pthread_t thread_id;  
